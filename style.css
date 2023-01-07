@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+  font-family:'Poppins', serif;
+}
+
+:root{
+    --box-shadow : rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    --background : rgb(239, 236, 236);
+    --transaction-income : rgba(159, 244, 146,0.3);
+    --transaction-income-border : rgba(64, 252, 64,0.6);
+    --transaction-expense : rgb(243, 146, 131,0.3);
+    --transaction-expense-border : rgba(252, 64, 64,0.6);
+    --transaction-balance : rgba(228, 243, 131, 0.3);
+    --transaction-balance-border : rgba(252, 246, 64, 0.6);
+}
+
+body{
+    background: rgb(242, 244, 242);
+}
+
+input{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid darkgray;
+    outline: none;
+    font-size: 16px;
+}
+
+input[type="submit"]{
+    cursor: pointer;
+    background: rgb(56, 214, 241);
+    color: white;
+}
+
+.title,
+.sub-title{
+    text-align: center;
+    margin-block: 2rem;
+    font-weight: 600;
+}
+
+header > .title{
+    margin-bottom: 0px;
+}
+
+header > .sub-title{
+    margin-top: 2px;
+}
+
+.title{
+    margin-block: 10px;
+    text-decoration: underline;
+    font-weight: 700 ;
+}
+
+.tracker,
+.top-wrapper{
+    display: flex;
+    gap: 10px;
+    margin-inline:auto ;
+    flex-wrap: wrap;
+}
+
+.top-wrapper{
+    gap: 2rem;
+    width: minmax(20vw, 50%);
+}
+
+.tracker{
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.error{
+    font-weight: 500;
+    text-align: center;
+    color: red;
+}
+
+.transaction-section{
+    margin-block: 1rem;
+    background-color: var(--background);
+    box-shadow: var(--box-shadow);  
+    width: minmax(20vw, 50%);
+    padding: 10px;
+    margin-inline: auto;
+    border-radius: 5px;
+}
+
+@media (min-width:45rem) {
+    .transaction-section,
+    .top-wrapper{
+        width: 60%;
+    }
+}
+
+.input,
+.statistics{
+    background-color: var(--background);
+    box-shadow: var(--box-shadow);
+    border-radius: 5px;
+}
+
+.input,
+.statistics{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 10px;
+    padding: 1.125em;
+}
+
+.input{
+    gap: 1.125em;
+}
+
+
+.statistics{
+    text-align: center;
+    align-items: stretch;
+    justify-content: space-evenly;
+}
+
+p{
+    font-weight: 500;
+}
+
+p:has(span:not([id])){
+    margin-top: 10px;
+}
+
+p > span:not([id]){
+    display: block;
+    opacity: 0.6;
+    font-weight: 300;
+}
+
+ul>li{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-block: 10px;
+
+}
+
+ul > li,
+.statistics > *:not(h1) {
+    background-color: var(--transaction-income);
+    border-left: 20px solid var(--transaction-income-border);
+    padding: 1.125rem;
+    width: min(80vw, 26rem);
+    border-radius: 5px;
+    box-shadow: var(--box-shadow);
+    margin-inline: auto;
+}
+.statistics > *:not(h1){
+    border-left: 0;
+    border-right:20px solid var(--transaction-income-border) ;
+}
+
+ul > li > i{
+    cursor: pointer;
+    opacity : 0.8;
+    transition: opacity linear 150ms;
+}
+
+ul > li > i:hover{
+    opacity: 1;
+    color: red;
+}
+
+
+.expense-list > *,
+.statistics > .expense{
+    background-color: var(--transaction-expense);
+    border-color: var(--transaction-expense-border);
+}
+
+.statistics > .balance{
+    background-color: var(--transaction-balance);
+    border-color: var(--transaction-balance-border);
+}
+
+
+.alert{
+    background-color: aquamarine;
+    padding: 1.3rem;
+    width: fit-content;
+    margin-inline: auto;
+    box-shadow: var(--box-shadow);
+    border-radius: 20px;
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translate(-50%);
+    transition: top ease-in-out 300ms;
+}
+
+.alert-show{
+    top : 10px;
+}
+
+.alert-error{
+    background-color: red;
+    color: white;
+}
+

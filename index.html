@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <h1 class="title">Expense Tracker</h1>
+      <p class="sub-title">Track every earning and expense you make easily</p>
+    </header>
+    <main>
+      <div class="main-wrapper">
+        <div class="top-wrapper">
+          <form class="input">
+            <h1 class="title">Add Transaction</h1>
+            <input type="text" class="source" name="source" />
+            <input type="number" class="amount" name="amount" />
+            <input
+              type="submit"
+              class="submit"
+              name="submit"
+              value="Add Transaction"
+            />
+            <p class="error"></p>
+          </form>
+          <div class="statistics">
+            <h1 class="title">Statistics</h1>
+            <div class="balance">
+              <p>Balance: Rs <span id="balance"></span></p>
+            </div>
+            <div class="income">
+              <p>Income: Rs <span id="income"></span></p>
+            </div>
+            <div class="expense">
+              <p>Expense: Rs <span id="expense"></span></p>
+            </div>
+          </div>
+        </div>
+        <div class="transaction-section">
+            <h1 class="title">Transaction</h1>
+            <div class="tracker">
+                <div class="income-wrapper">
+                    <h1 class="title">Income</h1>
+                    <ul class="income-list">
+                    </ul>
+                </div>
+                <div class="expense-wrapper">
+                    <h1 class="title">Expense</h1>
+                    <ul class="expense-list">
+                    </ul>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="alert alert-success alert-error">
+        <p>Transaction Added</p>
+      </div>
+    </main>
+    <script src="index.js"></script>
+  </body>
+</html>
